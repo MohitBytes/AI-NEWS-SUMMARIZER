@@ -1,0 +1,190 @@
+/* General Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+/* General Form Styling */
+.news-form {
+  background-color: #fff; /* White background for form */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+  overflow: hidden; /* Prevent any overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-form:hover {
+  transform: translateY(-5px); /* Slight lifting effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+}
+
+/* Label and Input Styles */
+.news-form label {
+  font-size: 1.2em;
+  margin-right: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.news-form input,
+.news-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+  color: #333;
+  background-color: #f9f9f9;
+  overflow-wrap: break-word; /* Prevent overflow in text inputs */
+}
+
+.news-form textarea {
+  resize: vertical;
+}
+
+.news-form input:focus,
+.news-form textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Radio Button Styling */
+.input-toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-toggle label {
+  font-size: 1.1em;
+  margin-right: 15px;
+}
+
+.input-toggle input {
+  margin-right: 10px;
+  transform: scale(1.1);
+}
+
+/* Button Styling */
+.news-form button {
+  background-color: #4caf50; /* Green button */
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.news-form button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .news-form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .news-form label {
+    font-size: 1.1em;
+  }
+
+  .news-form input,
+  .news-form textarea,
+  .news-form button {
+    font-size: 15px;
+  }
+
+  .input-toggle {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .input-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .news-form input,
+  .news-form textarea,
+  .news-form button {
+    font-size: 14px;
+  }
+
+  .news-form textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .input-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .news-form input,
+  .news-form textarea,
+  .news-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .news-form button {
+    font-size: 15px;
+  }
+
+  .news-form label {
+    font-size: 1.1em;
+  }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #4caf50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

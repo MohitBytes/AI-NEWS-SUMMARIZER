@@ -1,0 +1,104 @@
+/* Main form container */
+.news-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Radio Button Group */
+  .radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .radio-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .radio-input {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  
+  /* Input Area */
+  .input-area {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-textarea,
+  .input-url {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border 0.3s ease;
+  }
+  
+  .input-textarea:focus,
+  .input-url:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    padding: 14px;
+    background: #4caf50;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background: #43a047;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .news-form {
+      padding: 16px;
+    }
+  
+    .radio-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .input-textarea,
+    .input-url {
+      font-size: 0.95rem;
+    }
+  
+    .submit-btn {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .news-form {
+      margin: 20px 10px;
+    }
+  
+    .input-textarea {
+      height: 200px;
+    }
+  }
+  

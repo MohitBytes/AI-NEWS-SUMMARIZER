@@ -1,0 +1,74 @@
+.result-card {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 24px;
+    background: #fefefe;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .result-card h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+  }
+  
+  .summary-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    background: #f9f9f9;
+    padding: 16px;
+    border-left: 4px solid #4caf50;
+    border-radius: 10px;
+  }
+  
+  .sentiment-label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 8px;
+    color: white;
+    text-transform: capitalize;
+  }
+  
+  .sentiment-label.positive {
+    background-color: #4caf50;
+  }
+  
+  .sentiment-label.negative {
+    background-color: #e53935;
+  }
+  
+  .sentiment-label.neutral {
+    background-color: #9e9e9e;
+  }
+  
+  /* Loader */
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 40px;
+  }
+  
+  .loader {
+    border: 5px solid #eee;
+    border-top: 5px solid #4caf50;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
