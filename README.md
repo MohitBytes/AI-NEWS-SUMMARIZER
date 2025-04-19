@@ -108,12 +108,6 @@ Implements **VADER (Valence Aware Dictionary and sEntiment Reasoner)** to detect
 
 ---
 
-## 🤝 Contributing
-
-Pull requests are welcome! If you have ideas for improvements or bug fixes, feel free to open an issue or PR.
-
----
-
 ## 📃 License
 
 MIT License © 2025 [MohitBytes]
