@@ -6,10 +6,10 @@ A web-based application that summarizes news articles and analyzes their sentime
 
 ## 🚀 Features
 
-- 📝 **Text Summarization** using HuggingFace Transformers (BART/T5)
-- 😄 **Sentiment Analysis** using VADER Sentiment Analyzer
-- 🌐 Accepts both **text input** and **article URLs**
-- 📱 Fully **responsive** UI built with **React.js**
+- 📝 "Text Summarization" using HuggingFace Transformers (BART/T5)
+- 😄 "Sentiment Analysis" using VADER Sentiment Analyzer
+- 🌐 Accepts both "text input" and "article URLs"
+- 📱 Fully "responsive" UI built with "React.js"
 - 🔁 Real-time analysis with Flask-based API
 
 ---
