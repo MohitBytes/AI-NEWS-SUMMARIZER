@@ -25,11 +25,23 @@ function App() {
     }
   };
 
-  return (
+return (
     <div className="App">
-      <h1 className="app-title">📰 AI News Summarizer & Sentiment Analyzer</h1>
-      <NewsForm setResult={handleResult} />
+      <div className="app-header">
+        <h1 className="app-title">AI News Analyzer</h1>
+        <p className="app-subtitle">
+          Summarize articles and analyze sentiment with AI-powered precision
+        </p>
+      </div>
+      
+      <NewsForm setResult={setResult} setLoading={setLoading} />
       <ResultDisplay result={result} loading={loading} />
+      
+      <div className="floating-shapes">
+        <div className="shape circle-blue"></div>
+        <div className="shape circle-teal"></div>
+        <div className="shape blob"></div>
+      </div>
     </div>
   );
 }
