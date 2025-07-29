@@ -1,104 +1,64 @@
-/* Main form container */
-.news-form {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 24px;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.app-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #4c6ef5, #3bc9db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.app-subtitle {
+  font-size: 1.2rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.app-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 25%;
+  width: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, #4c6ef5, #3bc9db);
+  border-radius: 4px;
+  animation: underline-grow 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+@keyframes underline-grow {
+  0% { width: 0; left: 50%; }
+  100% { width: 50%; left: 25%; }
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2.2rem;
   }
   
-  /* Radio Button Group */
-  .radio-group {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-  }
-  
-  .radio-label {
+  .app-subtitle {
     font-size: 1rem;
-    font-weight: 500;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 8px;
   }
   
-  .radio-input {
-    transform: scale(1.2);
-    cursor: pointer;
+  .app-title::after {
+    bottom: -10px;
+    height: 3px;
   }
-  
-  /* Input Area */
-  .input-area {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .input-textarea,
-  .input-url {
-    padding: 14px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 1rem;
-    resize: vertical;
-    transition: border 0.3s ease;
-  }
-  
-  .input-textarea:focus,
-  .input-url:focus {
-    border-color: #4caf50;
-    outline: none;
-  }
-  
-  /* Submit Button */
-  .submit-btn {
-    padding: 14px;
-    background: #4caf50;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .submit-btn:hover {
-    background: #43a047;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .news-form {
-      padding: 16px;
-    }
-  
-    .radio-group {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .input-textarea,
-    .input-url {
-      font-size: 0.95rem;
-    }
-  
-    .submit-btn {
-      font-size: 1rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .news-form {
-      margin: 20px 10px;
-    }
-  
-    .input-textarea {
-      height: 200px;
-    }
-  }
-  
+}

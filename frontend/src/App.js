@@ -4,7 +4,7 @@ import ResultDisplay from './components/ResultDisplay';
 
 function App() {
   const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(false); // ✅ New loading state
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className="App">

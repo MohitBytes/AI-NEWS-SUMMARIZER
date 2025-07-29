@@ -6,7 +6,7 @@ function ResultDisplay({ result, loading }) {
     return (
       <div className="result-card loading">
         <div className="loader"></div>
-        <p>Analyzing... Please wait</p>
+        <p>Analyzing content... This may take a moment</p>
       </div>
     );
   }
@@ -15,10 +15,10 @@ function ResultDisplay({ result, loading }) {
 
   return (
     <div className="result-card">
-      <h2>📝 Summary</h2>
+      <h2>Article Summary</h2>
       <p className="summary-text">{result.summary}</p>
 
-      <h2>💬 Sentiment</h2>
+      <h2>Sentiment Analysis</h2>
       <p className={`sentiment-label ${result.sentiment.toLowerCase()}`}>
         {result.sentiment}
       </p>

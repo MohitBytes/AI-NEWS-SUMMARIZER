@@ -17,7 +17,7 @@ function NewsForm({ setResult, setLoading }) {
       const res = await axios.post('http://127.0.0.1:5000/analyze', payload);
       setResult(res.data);
     } catch (error) {
-      alert('Something went wrong!');
+      alert('Something went wrong! Please try again.');
       console.error(error);
     } finally {
       setLoading(false);
@@ -27,30 +27,30 @@ function NewsForm({ setResult, setLoading }) {
   return (
     <form className="news-form" onSubmit={handleSubmit}>
       <div className="input-toggle">
-        <label>
-          <input
-            type="radio"
-            value="text"
-            checked={inputType === 'text'}
-            onChange={() => setInputType('text')}
-          />
-          Text
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="url"
-            checked={inputType === 'url'}
-            onChange={() => setInputType('url')}
-          />
-          URL
-        </label>
+        <input
+          type="radio"
+          id="textType"
+          name="inputType"
+          value="text"
+          checked={inputType === 'text'}
+          onChange={() => setInputType('text')}
+        />
+        <label htmlFor="textType">Text Input</label>
+        <input
+          type="radio"
+          id="urlType"
+          name="inputType"
+          value="url"
+          checked={inputType === 'url'}
+          onChange={() => setInputType('url')}
+        />
+        <label htmlFor="urlType">Article URL</label>
       </div>
 
       {inputType === 'text' ? (
         <textarea
           rows="8"
-          placeholder="Paste news article text..."
+          placeholder="Paste news article text here..."
           value={text}
           onChange={(e) => setText(e.target.value)}
           required
@@ -58,14 +58,17 @@ function NewsForm({ setResult, setLoading }) {
       ) : (
         <input
           type="url"
-          placeholder="Paste article URL..."
+          placeholder="Paste article URL here..."
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           required
         />
       )}
 
-      <button type="submit">Analyze</button>
+      <button type="submit">
+        <span className="button-text">Analyze Content</span>
+        <span className="button-icon">→</span>
+      </button>
     </form>
   );
 }
