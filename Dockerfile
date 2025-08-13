@@ -1,29 +1,37 @@
-# Stage 1: Build React app
-FROM node:18 AS build
+# =========================
+# Stage 1: Build React App
+# =========================
+FROM node:20-alpine AS build
+
+# Set working directory
 WORKDIR /app
 
 # Copy package files and install dependencies
 COPY package*.json ./
 RUN npm install --include=dev
 
-# Copy project files
+# Copy all project files (including public/index.html)
 COPY . .
 
-# Fix permissions for react-scripts
+# Ensure react-scripts is executable
 RUN chmod +x node_modules/.bin/react-scripts
 
 # Build React app
 RUN npm run build
 
-# Stage 2: Serve app with Nginx
+# =========================
+# Stage 2: Serve with Nginx
+# =========================
 FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
 
 # Remove default nginx content
-RUN rm -rf ./*
+RUN rm -rf /usr/share/nginx/html/*
 
-# Copy build files from build stage
-COPY --from=build /app/build ./
+# Copy React build from previous stage
+COPY --from=build /app/build /usr/share/nginx/html
 
+# Expose port 80
 EXPOSE 80
+
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
