@@ -8,9 +8,54 @@
 
 A web-based application that summarizes news articles and analyzes their sentiment (Positive, Negative, or Neutral) using state-of-the-art NLP models. Built with React.js frontend and Flask backend, powered by HuggingFace Transformers.
 
+## 📋 Table of Contents
+
+- [📺 Demo](#-demo)
+- [🚀 Features](#-features)
+- [🖥️ Tech Stack](#️-tech-stack)
+- [📂 Project Structure](#-project-structure)
+- [📥 Installation & Setup](#-installation--setup)
+- [🧪 Usage](#-usage)
+- [🧠 How it Works](#-how-it-works)
+- [💡 Use Cases](#-use-cases)
+- [🔧 Troubleshooting](#-troubleshooting)
+- [🚀 Deployment](#-deployment)
+- [🤝 Contributing](#-contributing)
+- [🛠️ Future Improvements](#️-future-improvements)
+- [📃 License](#-license)
+- [🙏 Acknowledgments](#-acknowledgments)
+- [📞 Contact & Support](#-contact--support)
+
 ## 📺 Demo
 
-> **Note**: Screenshots and demo GIF coming soon! The application features a modern, responsive UI with real-time analysis capabilities.
+> **Note**: The application features a modern, responsive UI with real-time NLP analysis capabilities.
+
+### 🖼️ Preview
+
+```
+🏠 AI News Analyzer
+┌─────────────────────────────────────────┐
+│ ◯ Text Input    ⭘ Article URL          │
+├─────────────────────────────────────────┤
+│ 📝 Paste news article text here...     │
+│                                         │
+│                                         │
+│                                         │
+└─────────────────────────────────────────┘
+          [ 🚀 Analyze Content → ]
+
+📊 Results:
+┌─────────────────────────────────────────┐
+│ 📄 Summary: Article discusses...        │
+│ 😊 Sentiment: POSITIVE                  │
+└─────────────────────────────────────────┘
+```
+
+### ✨ Key Features Demo
+- 🎨 **Modern UI**: Gradient backgrounds with floating animations
+- ⚡ **Real-time**: Instant analysis with loading states
+- 📱 **Responsive**: Works seamlessly on desktop and mobile
+- 🔄 **Dual Mode**: Support for both text input and URL processing
 
 ---
 
@@ -78,7 +123,24 @@ AI-NEWS-SUMMARIZER/
 
 ### 🚀 Quick Start
 
-#### Option 1: Docker (Recommended)
+#### Option 1: Root Scripts (Recommended)
+
+```bash
+# Clone the repository
+git clone https://github.com/MohitBytes/AI-NEWS-SUMMARIZER.git
+cd AI-NEWS-SUMMARIZER
+
+# Install all dependencies (backend + frontend)
+npm run install-all
+
+# Start backend (Terminal 1)
+npm run start-backend
+
+# Start frontend (Terminal 2)  
+npm run start-frontend
+```
+
+#### Option 2: Docker (Production)
 
 ```bash
 # Clone the repository
@@ -86,13 +148,13 @@ git clone https://github.com/MohitBytes/AI-NEWS-SUMMARIZER.git
 cd AI-NEWS-SUMMARIZER
 
 # Build and run with Docker
-docker build -t ai-news-summarizer .
-docker run -p 80:80 ai-news-summarizer
+npm run docker-build
+npm run docker-run
 ```
 
 The application will be available at `http://localhost:80`
 
-#### Option 2: Manual Setup
+#### Option 3: Manual Setup
 
 ### 🔧 Backend (Flask + NLP)
 
